@@ -38,10 +38,12 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
   generate: {
     routes: [
       '/about',
+      '/Arbain_Nawawi_I/10'
     ]
   },
 
