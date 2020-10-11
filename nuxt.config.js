@@ -38,8 +38,11 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/sitemap'
+    //'@nuxtjs/sitemap'
   ],
+  generate: {
+    fallback: true
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
