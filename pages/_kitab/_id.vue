@@ -6,16 +6,16 @@
             Silahkan Cek Koneksi Internet Anda !!!
         </h3>
         <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
-            cara mudah mencari hadist di carihadis.my.id
+            cara mudah mencari hadis di carihadis.my.id
         </p>
     </div>
     <div v-if="hadistEmpty" class="lg:text-center pt-3">
         <p class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Respone Server</p>
         <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-red-700 sm:text-4xl sm:leading-10">
-            Hadist Tidak Di Temukan !!!
+            Hadis Tidak Di Temukan !!!
         </h3>
         <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
-            ketik kata pencarian hadist dengan ejaan yang benar !!!
+            ketik kata pencarian hadis dengan ejaan yang benar !!!
         </p>
         <button type="button">Kembali</button>
     </div>
@@ -23,7 +23,7 @@
         <div class="row">
             <h1>Kitab: {{this.$route.params.kitab}}</h1>
             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800 mb-3">
-                No. Hadist {{ this.$route.params.id }}
+                No. Hadis {{ this.$route.params.id }}
             </span>
         </div>
         <div class="row">

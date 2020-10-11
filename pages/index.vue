@@ -2,10 +2,10 @@
 <div class="container mx-auto">
     <div class="row">
         <div class="w-full max-w-screen-xl mx-auto px-auto">
-            <p class="text-red-500 text-sm">Ketik hadist apa yang akan kamu cari, kemudian klik Cari Hadist</p>
+            <p class="text-red-500 text-sm">Ketik Hadis apa yang akan kamu cari, kemudian klik Cari Hadis</p>
             <div class="w-full max-w-screen-xl">
                 <div class="flex items-center border-b border-teal-500 py-2">
-                    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" v-model="cariHadist" placeholder="Niat" v-on:keyup.enter.prevent="clickCari">
+                    <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" v-model="cariHadis" placeholder="Niat" v-on:keyup.enter.prevent="clickCari">
                     <button v-bind:class="{ 'animate-pulse': proseCari }" @click.prevent="clickCari" class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
                         {{ textCari }}
                     </button>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div v-for="(hadist,index) in Hadist.data" :key="index" class="mt-2 border-green-400 border-2 rounded-sm">
+            <div v-for="(Hadis,index) in Hadis.data" :key="index" class="mt-2 border-green-400 border-2 rounded-sm">
                 <a class="-m-3 p-3 flex items-start space-x-4 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150">
                     <svg class="flex-shrink-0 h-6 w-6 text-tael-300" x-description="Heroicon name: view-grid" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
@@ -42,14 +42,14 @@
                     <div class="row w-full">
                         <div class="space-y-1 mb-2">
                             <p class="text-base leading-6 font-medium text-gray-900">
-                                {{hadist.kitab}}
+                                {{Hadis.kitab}}
                             </p>
                             <p class="text-sm leading-5 text-gray-500">
-                                Nomor Hadist.
+                                Nomor Hadis.
                             </p>
                         </div>
                         <div class="grid grid-cols-3 gap-4 pb-3 items-center">
-                            <nuxt-link :to="{path: '/'+hadist.kitab+'/'+idKitab}" type="button" class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded mr-2" v-for="(idKitab,index) in hadist.id" :key="index">{{idKitab}}</nuxt-link>
+                            <nuxt-link :to="{path: '/'+Hadis.kitab+'/'+idKitab}" type="button" class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded mr-2" v-for="(idKitab,index) in Hadis.id" :key="index">{{idKitab}}</nuxt-link>
                         </div>
                     </div>
 
@@ -58,10 +58,10 @@
             <div v-if="failedFind" class="lg:text-center pt-3">
                 <p class="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Respone Server</p>
                 <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-red-700 sm:text-4xl sm:leading-10">
-                    Hadist Tidak Di Temukan !!!
+                    Hadis Tidak Di Temukan !!!
                 </h3>
                 <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
-                    ketik kata pencarian hadist dengan ejaan yang benar !!!
+                    ketik kata pencarian Hadis dengan ejaan yang benar !!!
                 </p>
             </div>
             <div v-if="serverUnrespone" class="lg:text-center pt-3">
@@ -70,7 +70,7 @@
                     Silahkan Cek Koneksi Internet Anda !!!
                 </h3>
                 <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
-                    cara mudah mencari hadist di carihadis.my.id
+                    cara mudah mencari Hadis di carihadis.my.id
                 </p>
             </div>
         </div>
@@ -84,38 +84,38 @@ export default {
     data() {
         return {
             proseCari: false,
-            cariHadist: '',
-            textCari: 'Cari Hadist',
-            Hadist: [],
+            cariHadis: '',
+            textCari: 'Cari Hadis',
+            Hadis: [],
             failedFind: false,
             serverUnrespone: false
         }
     },
     methods: {
         clickCari() {
-            if (this.cariHadist && this.proseCari == false) {
+            if (this.cariHadis && this.proseCari == false) {
                 this.proseCari = true
                 this.failedFind = false
                 this.serverUnrespone = false
-                this.textCari = 'Proses Mencari Hadist'
-                this.getHadist()
+                this.textCari = 'Proses Mencari Hadis'
+                this.getHadis()
             }
         },
         stopCari() {
             this.proseCari = false
-            this.textCari = 'Cari Hadist'
+            this.textCari = 'Cari Hadis'
         },
-        async getHadist() {
-            this.Hadist = []
+        async getHadis() {
+            this.Hadis = []
             const proxyurl = "https://cors-anywhere.herokuapp.com/";
-            const url = "http://api.carihadis.com/" + "?q=" + this.cariHadist; // site that doesn’t send Access-Control-*
+            const url = "http://api.carihadis.com/" + "?q=" + this.cariHadis; // site that doesn’t send Access-Control-*
             await fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
                 .then(response => response.text())
                 .then(contents => {
                     //console.log(contents)
                     this.proseCari = false
-                    this.textCari = 'Cari Hadist'
-                    this.Hadist = JSON.parse(contents)
+                    this.textCari = 'Cari Hadis'
+                    this.Hadis = JSON.parse(contents)
                     //console.log(JSON.parse(contents))
                     if (JSON.parse(contents).data == null) {
                         //alert('Data Tidak Di Temukan')
@@ -126,14 +126,14 @@ export default {
                   this.serverUnrespone = true
                 })
         },
-        async nomorHadist(kitab) {
+        async nomorHadis(kitab) {
             //alert(kitab)
             if (process.server) {
                 return
             } else {
-                return this.Hadist.filter((kitab) => {
-                    console.log(this.Hadist.match(this.Hadist))
-                    return this.Hadist.match(this.Hadist)
+                return this.Hadis.filter((kitab) => {
+                    console.log(this.Hadis.match(this.Hadis))
+                    return this.Hadis.match(this.Hadis)
                 })
             }
 

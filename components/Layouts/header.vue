@@ -9,7 +9,7 @@
                             <div class="flex items-center">
                                 <nuxt-link class="block lg:mr-4 no-underline" to="/">
                                     <h4 class="text-xl font-mono text-black">
-                                        CariHadist.my.id
+                                        CariHadis.my.id
                                     </h4>
                                 </nuxt-link>
                             </div>
