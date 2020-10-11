@@ -1,10 +1,10 @@
 <template>
 <div>
-    <header class="h-16 sm:flex sm:items-center sm:justify-between mx-5 lg:mb-1 mt-1">
+    <header class="h-16 sm:flex sm:items-center sm:justify-between mx-5 lg:-mb-2 md:-md-2 -mt-3">
         <div id="header">
             <div class="flex bg-teal-500 border-b border-teal-700 fixed top-0 inset-x-0 z-100 h-18 md:h-16 items-center">
                 <div class="w-full max-w-screen-xl relative mx-auto px-6">
-                    <div class="flex items-center py-5">
+                    <div class="flex items-center py-2">
                         <div class="lg:w-1/4 xl:w-1/5 md:pr-2 lg:pr-8">
                             <div class="flex items-center">
                                 <nuxt-link class="block lg:mr-4 no-underline" to="/">

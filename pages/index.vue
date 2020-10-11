@@ -1,5 +1,5 @@
 <template>
-<div class="container mx-auto">
+<div class="container mx-auto pt-2">
     <div class="row">
         <div class="w-full max-w-screen-xl mx-auto px-auto">
             <p class="text-red-500 text-sm">Ketik Hadis apa yang akan kamu cari, kemudian klik Cari Hadis</p>

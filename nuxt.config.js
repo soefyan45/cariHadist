@@ -39,6 +39,11 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
   ],
+  generate: {
+    routes: [
+      '/about',
+    ]
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
