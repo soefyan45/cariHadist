@@ -40,13 +40,6 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap'
   ],
-  generate: {
-    routes: [
-      '/about',
-      '/Arbain_Nawawi_I/10'
-    ]
-  },
-
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
