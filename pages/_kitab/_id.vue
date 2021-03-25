@@ -80,8 +80,8 @@ export default {
         async getHadist() {
             this.bacaHadist = []
             const proxyurl = "https://cors-anywhere.herokuapp.com/";
-            const url = "https://api.carihadis.com/" + "?kitab=" + this.$route.params.kitab + '&id=' + this.$route.params.id; // site that doesn’t send Access-Control-*
-            await fetch(url) // https://cors-anywhere.herokuapp.com/https://example.com
+            const url = "http://api.carihadis.com/" + "?kitab=" + this.$route.params.kitab + '&id=' + this.$route.params.id; // site that doesn’t send Access-Control-*
+            await fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
                 .then(response => response.text())
                 .then(contents => {
                     //console.log(contents)

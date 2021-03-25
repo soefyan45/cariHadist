@@ -76,7 +76,6 @@
         </div>
     </div>
 </div>
-<!-- coba -->
 </template>
 
 <script>
@@ -109,8 +108,8 @@ export default {
         async getHadis() {
             this.Hadis = []
             const proxyurl = "https://cors-anywhere.herokuapp.com/";
-            const url = "https://api.carihadis.com/" + "?q=" + this.cariHadis; // site that doesn’t send Access-Control-*
-            await fetch(url) // https://cors-anywhere.herokuapp.com/https://example.com
+            const url = "http://api.carihadis.com/" + "?q=" + this.cariHadis; // site that doesn’t send Access-Control-*
+            await fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
                 .then(response => response.text())
                 .then(contents => {
                     //console.log(contents)
